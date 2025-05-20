@@ -1,30 +1,40 @@
 import 'package:flutter/material.dart';
 
-void showSnackbar(BuildContext context, bool status, String message) {
-  Color backgroundColor = status ? Colors.green : Colors.red;
-  String snackbarMessage = status ? message : message;
+void showSnackbar(
+    BuildContext context, {
+      required String message,
+      bool isSuccess = true,
+      Duration duration = const Duration(seconds: 3),
+      String? actionLabel,
+      VoidCallback? onAction,
+      Color? backgroundColor,
+      Color textColor = Colors.white,
+      Color? actionTextColor,
+      double borderRadius = 30.0,
+      EdgeInsets margin = const EdgeInsets.all(16),
+    }) {
+  final Color defaultBackground = isSuccess ? Colors.green : Colors.red;
 
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
       content: Text(
-        snackbarMessage,
-        style: TextStyle(color: Colors.white),
+        message,
+        style: TextStyle(color: textColor),
       ),
-      backgroundColor: backgroundColor,
-      duration: Duration(seconds: 3),
+      backgroundColor: backgroundColor ?? defaultBackground,
+      duration: duration,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(borderRadius),
       ),
       behavior: SnackBarBehavior.floating,
-      margin: EdgeInsets.all(16),
-      action: SnackBarAction(
-        label: 'Close',
-        textColor: Colors.white, // Color of the action text
-        onPressed: () {
-          // Dismiss the snackbar
-          ScaffoldMessenger.of(context).hideCurrentSnackBar();
-        },
-      ),
+      margin: margin,
+      action: (actionLabel != null && onAction != null)
+          ? SnackBarAction(
+        label: actionLabel,
+        textColor: actionTextColor ?? textColor,
+        onPressed: onAction,
+      )
+          : null,
     ),
   );
 }
