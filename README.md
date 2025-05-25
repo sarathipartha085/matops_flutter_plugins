@@ -1,8 +1,3 @@
-Sure! Here’s a professional README template for your Flutter package `matops`, incorporating the details you provided:
-
----
-
-````markdown
 # Matops Flutter Package
 
 [![pub package](https://img.shields.io/pub/v/matops.svg)](https://pub.dev/packages/matops)
@@ -23,12 +18,12 @@ Visit our website: [https://matops-home.web.app/](https://matops-home.web.app/)
 
 ## Features
 
-- Customizable Loading Screen widget  
-- Gradient Background widget  
-- Configurable Splash Screen  
-- Convenient styled Snackbar and Confirm Dialog utilities  
-- Centralized app styling helpers  
-- Easily themeable and extensible components  
+- Customizable Loading Screen widget
+- Gradient Background widget
+- Configurable Splash Screen
+- Convenient styled Snackbar and Confirm Dialog utilities
+- Centralized app styling helpers
+- Easily themeable and extensible components
 
 ---
 
@@ -117,10 +112,3 @@ Contributions are welcome! Please open an issue or submit a pull request.
 
 **Matops** — Empowering Solutions Through Technology
 Website: [https://matops-home.web.app/](https://matops-home.web.app/)
-
-```
-
----
-
-Would you like me to generate badges, GitHub workflow configs, or publishing instructions next?
-```
