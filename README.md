@@ -33,7 +33,10 @@ Add `matops` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  matops: ^<latest_version>
+  matops:
+    git:
+      url: https://github.com/matops-tech/matops_flutter_plugins.git
+      ref: v1.0.0
 ````
 
 Then run:
